@@ -25,10 +25,19 @@ public class FlutterSdkPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    if (call.method.equals("getPlatformVersion")) {
-      result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
-      result.notImplemented();
+    switch (call.method) {
+      case "getPlatformVersion":
+        result.success("Android " + android.os.Build.VERSION.RELEASE);
+        break;
+      /*
+      case "finicityConnectLite":
+        String url = call.argument["url"];
+        if (url != null) {          
+        }
+        break;
+      */
+      default:
+        result.notImplemented();
     }
   }
 
