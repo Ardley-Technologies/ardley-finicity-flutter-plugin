@@ -1,1 +1,2 @@
+include ':connect-sdk-v1.0.3'
 rootProject.name = 'flutter_sdk'
