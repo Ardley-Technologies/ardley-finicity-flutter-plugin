@@ -1,6 +1,20 @@
-# Created by .ignore support plugin (hsz.mobi)
-/.idea
-/.vscode
-/android/.idea
-/android/.settings
-/example/build
+# IntelliJ related
+.idea/
+
+# Visual Studio Code related
+.vscode/
+
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+pubspec.lock
+
+example/.dart_tool/
+example/build/
+
+# Android related
+android/.idea
+android/.settings
+
+# iOS/XCode related
+example/ios/Podfile.lock
