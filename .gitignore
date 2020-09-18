@@ -13,8 +13,13 @@ example/.dart_tool/
 example/build/
 
 # Android related
+android/.classpath
 android/.idea
+android/.project
 android/.settings
+
+example/android/.project
+example/android/app/.project
 
 # iOS/XCode related
 example/ios/Podfile.lock
