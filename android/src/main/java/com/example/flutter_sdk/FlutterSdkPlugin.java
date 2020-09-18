@@ -29,13 +29,12 @@ public class FlutterSdkPlugin implements FlutterPlugin, MethodCallHandler {
       case "getPlatformVersion":
         result.success("Android " + android.os.Build.VERSION.RELEASE);
         break;
-      /*
       case "finicityConnectLite":
-        String url = call.argument["url"];
-        if (url != null) {          
+        String url = call.argument("url");
+        if (url != null) {
+          // foo = new Connect();
         }
         break;
-      */
       default:
         result.notImplemented();
     }
