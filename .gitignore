@@ -18,6 +18,8 @@ android/.idea
 android/.project
 android/.settings
 
+android/connect-sdk-v1.0.3/build/.transforms/
+
 example/android/.project
 example/android/.settings
 example/android/app/.classpath

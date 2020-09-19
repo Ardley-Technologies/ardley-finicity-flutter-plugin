@@ -2,6 +2,8 @@ package com.example.flutter_sdk;
 
 import androidx.annotation.NonNull;
 
+import com.finicity.connect.sdk.Connect;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -32,7 +34,7 @@ public class FlutterSdkPlugin implements FlutterPlugin, MethodCallHandler {
       case "finicityConnectLite":
         String url = call.argument("url");
         if (url != null) {
-          // foo = new Connect();
+          Connect foo = new Connect();
         }
         break;
       default:
