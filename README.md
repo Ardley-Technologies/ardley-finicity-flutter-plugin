@@ -1,4 +1,4 @@
-# flutter_sdk
+# finicitySdk
 
 Flutter SDK for Finicity
 

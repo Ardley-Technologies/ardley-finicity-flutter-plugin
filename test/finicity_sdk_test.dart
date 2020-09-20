@@ -1,9 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_sdk/flutter_sdk.dart';
+import 'package:finicity_sdk/finicity_sdk.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('flutter_sdk');
+  const MethodChannel channel = MethodChannel('finicity_sdk');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await FlutterSdk.platformVersion, '42');
+    expect(await FinicitySdk.platformVersion, '42');
   });
 }

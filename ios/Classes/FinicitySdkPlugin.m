@@ -1,4 +1,4 @@
-#import "FlutterSdkPlugin.h"
+#import "FinicitySdkPlugin.h"
 #if __has_include(<finicity_sdk/finicity_sdk-Swift.h>)
 #import <finicity_sdk/finicity_sdk-Swift.h>
 #else
@@ -8,8 +8,8 @@
 #import "finicity_sdk-Swift.h"
 #endif
 
-@implementation FlutterSdkPlugin
+@implementation FinicitySdkPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftFlutterSdkPlugin registerWithRegistrar:registrar];
+  [SwiftFinicitySdkPlugin registerWithRegistrar:registrar];
 }
 @end
