@@ -11,7 +11,9 @@ public struct ConnectViewConfig {
   public var done: ((Foundation.NSDictionary?) -> Swift.Void)!
   public var cancel: (() -> Swift.Void)!
   public var error: ((Foundation.NSDictionary?) -> Swift.Void)!
-  public init(connectUrl: Swift.String, loaded: (() -> Swift.Void)? = nil, done: ((Foundation.NSDictionary?) -> Swift.Void)? = nil, cancel: (() -> Swift.Void)? = nil, error: ((Foundation.NSDictionary?) -> Swift.Void)? = nil)
+  public var route: ((Foundation.NSDictionary?) -> Swift.Void)!
+  public var user: ((Foundation.NSDictionary?) -> Swift.Void)!
+  public init(connectUrl: Swift.String, loaded: (() -> Swift.Void)? = nil, done: ((Foundation.NSDictionary?) -> Swift.Void)? = nil, cancel: (() -> Swift.Void)? = nil, error: ((Foundation.NSDictionary?) -> Swift.Void)? = nil, route: ((Foundation.NSDictionary?) -> Swift.Void)? = nil, userEvent: ((Foundation.NSDictionary?) -> Swift.Void)? = nil)
 }
 @objc public class ConnectViewController : UIKit.UIViewController, WebKit.WKNavigationDelegate, WebKit.WKUIDelegate, WebKit.WKScriptMessageHandler {
   @objc override dynamic public func viewDidLoad()
