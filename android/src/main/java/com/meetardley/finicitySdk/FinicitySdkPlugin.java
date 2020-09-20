@@ -15,8 +15,8 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 
-/** FlutterSdkPlugin */
-public class FlutterSdkPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+/** FinicitySdkPlugin */
+public class FinicitySdkPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -46,7 +46,7 @@ public class FlutterSdkPlugin implements FlutterPlugin, MethodCallHandler, Activ
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_sdk");
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "finicity_sdk");
     channel.setMethodCallHandler(this);
     context = flutterPluginBinding.getApplicationContext();
   }
@@ -62,7 +62,6 @@ public class FlutterSdkPlugin implements FlutterPlugin, MethodCallHandler, Activ
         if (url != null) {
           ConnectEventHandler x = new ConnectEventHandler();
           Connect.start( activity, url, new ConnectEventHandler());
-
         }
         result.success(null);
         break;

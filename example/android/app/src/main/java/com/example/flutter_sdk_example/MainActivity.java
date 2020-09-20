@@ -1,4 +1,4 @@
-package com.example.flutter_sdk_example;
+package com.example.finicity_sdk_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

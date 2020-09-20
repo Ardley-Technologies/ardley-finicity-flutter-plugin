@@ -2,14 +2,14 @@ import Flutter
 import UIKit
 import Connect
 
-public class SwiftFlutterSdkPlugin: NSObject, FlutterPlugin {
+public class SwiftFinicitySdkPlugin: NSObject, FlutterPlugin {
 
     var connectViewController: ConnectViewController = ConnectViewController()
     var connectNavController: UINavigationController = UINavigationController()
 
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_sdk", binaryMessenger: registrar.messenger())
-    let instance = SwiftFlutterSdkPlugin()
+    let channel = FlutterMethodChannel(name: "finicity_sdk", binaryMessenger: registrar.messenger())
+    let instance = SwiftFinicitySdkPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

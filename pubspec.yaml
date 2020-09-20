@@ -29,9 +29,9 @@ flutter:
     platforms:
       android:
         package: com.meetardley.finicitySdk
-        pluginClass: FlutterSdkPlugin
+        pluginClass: FinicitySdkPlugin
       ios:
-        pluginClass: FlutterSdkPlugin
+        pluginClass: FinicitySdkPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
