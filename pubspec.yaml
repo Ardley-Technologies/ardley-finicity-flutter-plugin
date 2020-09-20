@@ -1,4 +1,4 @@
-name: flutter_sdk
+name: finicity_sdk
 description: Flutter SDK for Finicity
 version: 0.0.1
 author:
@@ -28,7 +28,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.flutter_sdk
+        package: com.meetardley.finicitySdk
         pluginClass: FlutterSdkPlugin
       ios:
         pluginClass: FlutterSdkPlugin
