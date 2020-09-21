@@ -11,6 +11,6 @@ class FinicitySdk {
   }
 
   Future<dynamic> showAlertDialog(String url) async {
-    await _channel.invokeMethod('finicityConnectLite', {"url": url});
+    return await _channel.invokeMethod('finicityConnectLite', {"url": url});
   }
 }
