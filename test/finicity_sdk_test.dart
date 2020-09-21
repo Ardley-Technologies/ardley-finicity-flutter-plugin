@@ -18,6 +18,7 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await FinicitySdk.platformVersion, '42');
+    FinicitySdk foo = FinicitySdk();
+    expect(await foo.platformVersion(), '42');
   });
 }
