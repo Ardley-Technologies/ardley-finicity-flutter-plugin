@@ -51,7 +51,7 @@ public class SwiftFinicitySdkPlugin: NSObject, FlutterPlugin {
                     self.connectLoaded()
                 }
             }
-
+            result("iOS " + UIDevice.current.systemVersion)
         } else {
             result(FlutterError(code: "-1", message: "iOS could not extract " +
                "flutter arguments in method: (sendParams)", details: nil))
