@@ -1,7 +1,6 @@
 @JS()
 library connect;
 
-import 'package:flutter/material.dart';
 import 'package:js/js.dart';
 
 import 'finicity_sdk_impl.dart';
@@ -34,9 +33,7 @@ class FinicitySdk implements FinicitySdkImpl {
     return Future.value("Web");
   }
 
-  Future<dynamic> showAlertDialog({String url, BuildContext context}) async {
-    print('web showAlertDialog');
-
+  Future<dynamic> showAlertDialog({String url}) async {
     connectIFrame(
       url,
       ConnectOptions(

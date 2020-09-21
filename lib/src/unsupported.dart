@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import 'finicity_sdk_impl.dart';
 
 class FinicitySdk implements FinicitySdkImpl {
@@ -9,7 +7,7 @@ class FinicitySdk implements FinicitySdkImpl {
   }
 
   @override
-  Future showAlertDialog({String url, BuildContext context}) {
+  Future showAlertDialog({String url}) {
     throw UnimplementedError();
   }
 }
