@@ -63,7 +63,7 @@ public class FinicitySdkPlugin implements FlutterPlugin, MethodCallHandler, Acti
           ConnectEventHandler x = new ConnectEventHandler();
           Connect.start( activity, url, new ConnectEventHandler());
         }
-        result.success('success');
+        result.success("success");
         break;
       default:
         result.notImplemented();
