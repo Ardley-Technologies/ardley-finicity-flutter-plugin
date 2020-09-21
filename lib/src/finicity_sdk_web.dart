@@ -1,9 +1,33 @@
-import 'dart:html' as html;
-import 'dart:ui' as ui;
+@JS()
+library connect;
 
 import 'package:flutter/material.dart';
+import 'package:js/js.dart';
 
 import 'finicity_sdk_impl.dart';
+
+@JS('finicityConnect.connectIFrame')
+external void connectIFrame(String url, Object obj);
+
+@JS()
+@anonymous
+class ConnectOptions {
+  external String get overlay;
+  external Function get success;
+  external Function get cancel;
+  external Function get error;
+  external Function get loaded;
+  external Function get route;
+
+  external factory ConnectOptions({
+    String overlay,
+    Function success,
+    Function cancel,
+    Function error,
+    Function loaded,
+    Function route,
+  });
+}
 
 class FinicitySdk implements FinicitySdkImpl {
   Future<String> platformVersion() {
@@ -13,65 +37,26 @@ class FinicitySdk implements FinicitySdkImpl {
   Future<dynamic> showAlertDialog({String url, BuildContext context}) async {
     print('web showAlertDialog');
 
-    String fileContents = """
-      <html>
-          <head>
-              <meta name="viweport" content="width=device-width, initial-scale=2">
-              <script src="https://connect.finicity.com/assets/sdk/finicity-connect.min.js"></script>
-          </head>
-          <body>
-              <script>
-                var finicityConnectUrl = "$url";
-                window.finicityConnect.connectIFrame(finicityConnectUrl, {                    
-                    overlay: 'rgba(255,255,255, 0)',
-                    success: function(data) {
-                      console.log('Yay! We got data', data);
-                    },
-                    cancel: function() {
-                      console.log('The user cancelled the iframe');
-                    },
-                    error: function(err) {
-                      console.error('Some runtime error was generated during Finicity Connect', err);
-                    },
-                    loaded: function() {
-                      console.log('This gets called only once after the iframe has finished loading');
-                    },
-                    route: function(event) {
-                      console.log('This is called as the user progresses through Connect');
-                    }
-                  });
-                </script>                
-          </body>
-      </html>
-      """;
-
-    // attempt #2: use an iframe
-    Size size = MediaQuery.of(context).size;
-
-    final html.IFrameElement _iframeElement = html.IFrameElement();
-    _iframeElement.height = size.height.round().toString();
-    _iframeElement.width = size.width.round().toString();
-    _iframeElement.srcdoc = fileContents;
-    _iframeElement.style.border = 'none';
-    _iframeElement.style.backgroundColor = "#FFFFFF";
-
-    // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(
-      'iframeElement',
-      (int viewId) => _iframeElement,
-    );
-
-    Widget wif = HtmlElementView(
-      key: UniqueKey(),
-      viewType: 'iframeElement',
-    );
-
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return wif;
-      },
+    connectIFrame(
+      url,
+      ConnectOptions(
+        overlay: 'rgba(255,255,255, 0)',
+        success: allowInterop(() {
+          print('success');
+        }),
+        cancel: allowInterop(() {
+          print('cancel');
+        }),
+        error: allowInterop(() {
+          print('success');
+        }),
+        loaded: allowInterop(() {
+          print('loaded');
+        }),
+        route: allowInterop(() {
+          print('route');
+        }),
+      ),
     );
   }
 }
