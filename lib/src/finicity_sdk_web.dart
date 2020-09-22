@@ -11,6 +11,7 @@ external void launch(String url, Object obj);
 @JS()
 @anonymous
 class ConnectOptions {
+  external String get selector;
   external String get overlay;
   external Function get success;
   external Function get cancel;
@@ -19,6 +20,7 @@ class ConnectOptions {
   external Function get route;
 
   external factory ConnectOptions({
+    String selector,
     String overlay,
     Function success,
     Function cancel,
@@ -37,6 +39,7 @@ class FinicitySdk implements FinicitySdkImpl {
     launch(
       url,
       ConnectOptions(
+        selector: '#connect-container',
         overlay: 'rgba(255,255,255,1)',
         success: allowInterop((Object data) {
           print('success');
