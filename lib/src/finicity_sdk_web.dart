@@ -6,7 +6,7 @@ import 'package:js/js.dart';
 import 'finicity_sdk_impl.dart';
 
 @JS('finicityConnect.launch')
-external void connectIFrame(String url, Object obj);
+external void launch(String url, Object obj);
 
 @JS()
 @anonymous
@@ -34,7 +34,7 @@ class FinicitySdk implements FinicitySdkImpl {
   }
 
   Future<dynamic> showAlertDialog({String url}) async {
-    connectIFrame(
+    launch(
       url,
       ConnectOptions(
         overlay: 'rgba(255,255,255,1)',
