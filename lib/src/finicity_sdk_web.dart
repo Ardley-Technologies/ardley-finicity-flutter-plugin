@@ -5,7 +5,7 @@ import 'package:js/js.dart';
 
 import 'finicity_sdk_impl.dart';
 
-@JS('finicityConnect.connectIFrame')
+@JS('finicityConnect.launch')
 external void connectIFrame(String url, Object obj);
 
 @JS()
