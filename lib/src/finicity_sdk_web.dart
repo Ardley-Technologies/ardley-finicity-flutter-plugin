@@ -38,19 +38,19 @@ class FinicitySdk implements FinicitySdkImpl {
       url,
       ConnectOptions(
         overlay: 'rgba(255,255,255, 0)',
-        success: allowInterop(() {
+        success: allowInterop((Object data) {
           print('success');
         }),
         cancel: allowInterop(() {
           print('cancel');
         }),
-        error: allowInterop(() {
+        error: allowInterop((Object err) {
           print('success');
         }),
         loaded: allowInterop(() {
           print('loaded');
         }),
-        route: allowInterop(() {
+        route: allowInterop((Object event) {
           print('route');
         }),
       ),
