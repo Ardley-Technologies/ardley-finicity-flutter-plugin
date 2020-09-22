@@ -37,7 +37,7 @@ class FinicitySdk implements FinicitySdkImpl {
     connectIFrame(
       url,
       ConnectOptions(
-        overlay: 'rgba(255,255,255, 0)',
+        overlay: 'rgba(255,255,255,1)',
         success: allowInterop((Object data) {
           print('success');
         }),
