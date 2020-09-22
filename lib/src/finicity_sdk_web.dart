@@ -41,7 +41,7 @@ class FinicitySdk implements FinicitySdkImpl {
         success: allowInterop((Object data) {
           print('success');
         }),
-        cancel: allowInterop(() {
+        cancel: allowInterop((Object data) {
           print('cancel');
         }),
         error: allowInterop((Object err) {
