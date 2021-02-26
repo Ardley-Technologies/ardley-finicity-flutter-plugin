@@ -16,9 +16,6 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        flatDir {
-            dirs 'src/main/libs'
-        }
     }
 }
 
@@ -36,5 +33,5 @@ android {
 }
 
 dependencies {
-    implementation(name:'connect-sdk-v1.0.3', ext:'aar')
+    implementation 'com.finicity.connect:connect-sdk:+'
 }
