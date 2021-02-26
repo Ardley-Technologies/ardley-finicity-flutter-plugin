@@ -1,11 +1,12 @@
 package com.meetardley.finicitySdk;
 
 import android.app.Activity;
+import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.finicity.connect.sdk.Connect;
-import android.content.Context;
 import com.meetardley.finicitySdk.ConnectEventHandler;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

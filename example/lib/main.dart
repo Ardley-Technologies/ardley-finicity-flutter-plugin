@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            FlatButton(
+            TextButton(
               onPressed: () {
                 finicitySdk
                     .showAlertDialog(
