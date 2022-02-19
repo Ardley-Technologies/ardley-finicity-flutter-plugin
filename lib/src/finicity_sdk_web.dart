@@ -6,7 +6,7 @@ import 'package:js/js.dart';
 import 'finicity_sdk_impl.dart';
 
 @JS('finicityConnect.launch')
-external void launch(String url, Object obj);
+external void launch(String? url, Object obj);
 
 @JS()
 @anonymous
@@ -20,13 +20,13 @@ class ConnectOptions {
   external Function get route;
 
   external factory ConnectOptions({
-    String selector,
-    String overlay,
-    Function success,
-    Function cancel,
-    Function error,
-    Function loaded,
-    Function route,
+    String? selector,
+    String? overlay,
+    Function? success,
+    Function? cancel,
+    Function? error,
+    Function? loaded,
+    Function? route,
   });
 }
 
@@ -35,7 +35,7 @@ class FinicitySdk implements FinicitySdkImpl {
     return Future.value("Web");
   }
 
-  Future<dynamic> showAlertDialog({String url}) async {
+  Future<dynamic> showAlertDialog({String? url}) async {
     launch(
       url,
       ConnectOptions(
