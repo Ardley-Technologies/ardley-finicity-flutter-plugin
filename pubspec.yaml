@@ -1,12 +1,11 @@
 name: finicity_sdk
 description: Flutter SDK for Finicity
 version: 0.0.2
-author:
 homepage:
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.20.0 <2.0.0"
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: ">=2.10.0 <3.0.0"
 
 dependencies:
   flutter:

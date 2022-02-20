@@ -7,7 +7,7 @@ class FinicitySdk implements FinicitySdkImpl {
   }
 
   @override
-  Future showAlertDialog({String url}) {
+  Future showAlertDialog({String? url}) {
     throw UnimplementedError();
   }
 }
